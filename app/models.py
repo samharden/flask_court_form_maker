@@ -2,13 +2,13 @@ import pandas as pd
 from app import engine
 
 
-def search_last(last):
-    sql_text = 'SELECT * FROM odyssey WHERE lastname_stripped LIKE "%' + last + '%";'
-    df = pd.read_sql_query(sql_text, engine)
+#def search_last(last):
+#    sql_text = 'SELECT * FROM odyssey WHERE lastname_stripped LIKE "%' + last + '%";'
+#    df = pd.read_sql_query(sql_text, engine)
     
     
     
-    return dfr
+#    return dfr
 
 
 def search_all(first, last, case):
@@ -38,9 +38,15 @@ def search_all(first, last, case):
         print "Need to add NO RESULTS prompt and return to index"
     print 'Done with search'
     
-    
-    df.drop(['last_name', 'firstname_stripped', 'first_name', 'lastname_stripped', 'index', 'Connection Type'], axis=1, inplace=True)
-    #df.drop ?? in pandas  df.drop('name of column', axis=1 **where it is)
+    #drop extraneous columns from result display
+    df.drop(['last_name', 'firstname_stripped', 
+    		'first_name', 'lastname_stripped', 
+    		'index', 'Connection Type', 
+    		'Case Type', 'Hearing Type'], axis=1, inplace=True)
+    #rename column headers: s		
+    df.columns = ['Party Name:', 'Courtroom Location:', 
+    			'Date & Time:', 'Judge\'s Name:', 'Case Number:']
+
     
     return df
 
