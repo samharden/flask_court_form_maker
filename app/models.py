@@ -39,7 +39,7 @@ def search_all(first, last, case):
     print 'Done with search'
     
     
-    df.drop(['last_name', 'firstname_stripped', 'first_name', 'lastname_stripped', 'index'], axis=1, inplace=True)
+    df.drop(['last_name', 'firstname_stripped', 'first_name', 'lastname_stripped', 'index', 'Connection Type'], axis=1, inplace=True)
     #df.drop ?? in pandas  df.drop('name of column', axis=1 **where it is)
     
     return df
