@@ -9,7 +9,7 @@ def read_odyssey():
     # Odyssey has the court dates.
     # filename = "Odyssey-JobOutput-June 01, 2016 06-32-43-1609654-3.TXT"
     filename = 'Odyssey-Test Data.TXT'
-    filepath = "/Users/samharden/Python/court_date_app-master/data/Odyssey/" + filename
+    filepath = "/Users/samharden/Python/findcourtdate/data/Odyssey/" + filename
 
     df_odyssey = pd.read_csv(filepath)
 
