@@ -38,11 +38,11 @@ def results():
     #df = mdl.search_last(session['last_name'].replace(' ', ''))
     if len(df) < 1:
         print 'len(df) = ', len(df)
-        info = Markup('<h2 style="color:red"> No results found for: <br> \
+        info = Markup('<h2 style="color:red"> Sorry, but we didn\'t find any results for your search: <br> \
          First Name: %s, <br> \
          Last Name: %s, <br> \
          Case Number: %s. <br><br> \
-         Try another search </h2>' %
+         Make sure you entered the full first and last name or case number correctly.</h2>' %
                       (session['first_name'], session['last_name'], session['case_num'])
                       )
         flash(info)
