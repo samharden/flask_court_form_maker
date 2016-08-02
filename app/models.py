@@ -43,7 +43,7 @@ def search_all(first, last, case):
     		'first_name', 'lastname_stripped', 
     		'index', 'Connection Type', 
     		'Case Type', 'Hearing Type'], axis=1, inplace=True)
-    #rename column headers: s		
+    #rename column headers: 		
     df.columns = ['Party Name:', 'Courtroom Location:', 
     			'Date & Time:', 'Judge\'s Name:', 'Case Number:']
 

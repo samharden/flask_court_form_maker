@@ -25,7 +25,7 @@ def index():
     # rendered a second time.
 
     return render_template('index.html',
-                           title='When Is My Court Date',
+                           title='Hillsborough County Court Date Search',
                            form=form)
 
 @app.route('/results')
@@ -50,7 +50,7 @@ def results():
 
     return render_template('results.html',
                            data=df.to_html(),
-                           title='My Court Date Is',
+                           title='Hillsborough County Court Date Search',
                            )
 
 # http://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-vii-unit-testing
