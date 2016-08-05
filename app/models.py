@@ -6,9 +6,19 @@ from app import engine
 #    sql_text = 'SELECT * FROM odyssey WHERE lastname_stripped LIKE "%' + last + '%";'
 #    df = pd.read_sql_query(sql_text, engine)
     
+## New function - protect against sql injection attacks
     
-    
-#    return dfr
+def sql_search(field_value, field_name):
+    wrapped_field = '%' + field_value + '%'
+    sql_text = \
+        'SELECT * FROM odyssey WHERE %s LIKE :wrapped_field;' % (field_name)
+    print 'wrapped_field = ', wrapped_field
+    print sql_text
+    df = pd.read_sql_query(sql_text, engine, params=[wrapped_field])
+    return df
+
+
+### End new function
 
 
 def search_all(first, last, case):
