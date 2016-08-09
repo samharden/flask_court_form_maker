@@ -42,7 +42,10 @@ def results():
          First Name: %s, <br> \
          Last Name: %s, <br> \
          Case Number: %s. <br><br> \
-         Make sure you entered the full first and last name or case number correctly.</h2>' %
+         Make sure you entered the full first and last name or case number correctly.<br><br>\
+         \
+         If your\'re seeing this message right after your court date, this may jusy mean<br>\
+         that the court\'s online system hasn\'t been updated yet. Check back in a few days.</h2>' %
                       (session['first_name'], session['last_name'], session['case_num'])
                       )
         flash(info)
